@@ -13,18 +13,11 @@ namespace FinancePyramid
         [XmlElement("uczestnik")]
         public User root;
 
-        internal List<User> userList = new List<User>();
+        private List<User> userList = new List<User>();
 
 
 
         /* Getters and Setters */
-
-        public User Root
-        {
-            get { return root; }
-            set { root = value; }
-        }
-
 
         public List<User> UserList
         {
@@ -40,14 +33,14 @@ namespace FinancePyramid
             {
                 foreach (User u in root.under)
                 {
-                    u.parent = root;
+                    u.Parent = root;
                     u.Level = root.Level + 1;
                     CreateList(u);
                 }
             }
             else // leaf
             {
-                User parent = root.parent;
+                User parent = root.Parent;
                 User child = root;
 
                 parent.LeavesUnder=parent.LeavesUnder+1;
@@ -56,15 +49,14 @@ namespace FinancePyramid
                 {
                    parent.LeavesUnder += child.LeavesUnder;
                    child = parent;
-                   parent = parent.parent;
-
+                   parent = parent.Parent;
                 }
             }
         }
 
         public User GetUserById(int id)
         {
-            return this.userList.FirstOrDefault(User => User.Id == id);
+            return this.userList.FirstOrDefault(User => User.id == id);
         }
 
 
@@ -73,6 +65,7 @@ namespace FinancePyramid
         {
             User user = GetUserById(id);
             List<User> usersAbove = new List<User>();
+
             if (user != null)
             {
                 while(user.Parent!=null)
@@ -80,9 +73,11 @@ namespace FinancePyramid
                     usersAbove.Add(user.Parent);
                     user = user.Parent;
                 }
+
                 usersAbove.Reverse();
                 return usersAbove;
             }
+
             usersAbove.Add(this.root);
             return usersAbove;
         }
@@ -90,10 +85,10 @@ namespace FinancePyramid
         /* Apply all the transfers made */
         public void ApplyTransfers(Transfers transfers)
         {
-            foreach( Transfer t in transfers.Trans )
+            foreach( Transfer t in transfers.transactions )
             {
-                int amount = t.Amount;
-                List<User> branch = GetBranchAbove(t.From);
+                int amount = t.amount;
+                List<User> branch = GetBranchAbove(t.from);
                 User last = this.root;
                 
                 foreach(User user in branch)

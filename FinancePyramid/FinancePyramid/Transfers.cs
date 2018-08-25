@@ -12,13 +12,5 @@ namespace FinancePyramid
     {
         [XmlElement("przelew")]
         public Transfer[] transactions; //list of transfers made
-
-
-        /* Getter and Setter */
-        public Transfer[] Trans
-        {
-            get { return transactions; }
-            set { transactions = value; }
-        }
     }
 }

@@ -13,19 +13,5 @@ namespace FinancePyramid
         public int from;
         [XmlAttribute("kwota")]
         public int amount;
-
-
-        /* Getters and Setters */
-
-        public int From
-        {
-            get { return from; }
-            set { from = value; }
-        }
-        public int Amount
-        {
-            get { return amount; }
-            set { amount = value; }
-        }
     }
 }
