@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancePyramid", "FinancePyramid\FinancePyramid.csproj", "{F4153703-41C5-4C60-9063-8941640D53DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4153703-41C5-4C60-9063-8941640D53DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4153703-41C5-4C60-9063-8941640D53DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4153703-41C5-4C60-9063-8941640D53DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4153703-41C5-4C60-9063-8941640D53DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D62FD1E0-2F31-431D-8869-9D8CD9C948E7}
+	EndGlobalSection
+EndGlobal
